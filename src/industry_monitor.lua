@@ -60,13 +60,13 @@ local function IndustryMonitor(screens, page_size, ui_render_script)
   -- Ensures a core is linked
   local core = library.getCoreUnit()
   if not core then
-    print('ERROR: Core Unit not connected!')
+    system.print('ERROR: Core Unit not connected!')
     return unit.exit()
   end
 
   -- Ensures at least one screen is linked
   if #screens == 0 then
-    print('ERROR: No screen not connected!')
+    system.print('ERROR: No screen not connected!')
     return unit.exit()
   end
 

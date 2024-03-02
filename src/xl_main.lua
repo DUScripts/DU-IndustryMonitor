@@ -42,13 +42,15 @@ local render_script = library.embedFile('xl_render.lua')
 
 -- Initializes the monitor
 local monitor = IndustryMonitor(screens, page_size, render_script)
-monitor.render_config.colors ={
-  default = Color_Default,
-  stopped = Color_Stopped,
-  pending = Color_Pending,
-  running = Color_Running,
-  warning = Color_Warning,
-  error = Color_Error,
-},
+if monitor then
+  monitor.render_config.colors ={
+    default = Color_Default,
+    stopped = Color_Stopped,
+    pending = Color_Pending,
+    running = Color_Running,
+    warning = Color_Warning,
+    error = Color_Error,
+  },
 
-system.print(('[ Wolfe Labs Industry Monitor XL v%s ]'):format(monitor.version))
+  system.print(('[ Wolfe Labs Industry Monitor XL v%s ]'):format(monitor.version))
+end
